@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Pawshield</string>
+    <string name="about_purpose">PawShield aims to assist pet owners in the preliminary identification of common skin conditions in dogs and cats using AI-powered image analysis. It provides potential diagnoses and general treatment information based on visual input. This tool is intended for informational purposes only.</string>
+    <string name="disclaimer_long">Disclaimer: This application provides preliminary guidance based on image analysis and general knowledge. It is NOT a substitute for professional veterinary advice, diagnosis, or treatment. Always consult a qualified veterinarian for any health concerns regarding your pet. Diagnostic accuracy may vary based on image quality and condition complexity. Treatment suggestions are general and may not be suitable for every individual pet; veterinary guidance is essential.</string>
+</resources>
