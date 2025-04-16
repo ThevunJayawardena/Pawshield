@@ -87,14 +87,10 @@ fun ResultScreen(viewModel: MainViewModel) {
         }
     ) { paddingValues ->
         if (result == null) {
-            // Displayed while result is null (e.g., navigating away after save)
             Box(modifier = Modifier.fillMaxSize().padding(paddingValues), contentAlignment = Alignment.Center) {
-                // Optionally show a brief message or just let it navigate away
-                // CircularProgressIndicator()
-                Text("Loading...") // Or empty
+                Text("Loading...")
             }
         } else {
-            // Main content column when result is available
             Column(
                 modifier = Modifier
                     .fillMaxSize()
@@ -104,7 +100,6 @@ fun ResultScreen(viewModel: MainViewModel) {
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
 
-                // Display captured image
                 result.imageUriString?.let { uriString ->
                     Uri.parse(uriString)?.let { uri ->
                         Image(
@@ -154,13 +149,12 @@ fun ResultScreen(viewModel: MainViewModel) {
                             fontWeight = FontWeight.Bold,
                             textAlign = TextAlign.Center
                         )
-                        // Confidence removed
                     }
                 } // End Diagnosis Card
 
                 Spacer(modifier = Modifier.height(20.dp))
 
-                // Treatment Info Card (only if treatment is not null)
+                // Treatment Info Card
                 result.treatment?.let { treatment ->
                     Card(
                         modifier = Modifier.fillMaxWidth(),

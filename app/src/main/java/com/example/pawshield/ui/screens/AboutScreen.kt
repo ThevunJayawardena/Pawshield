@@ -57,7 +57,7 @@ fun AboutScreen(viewModel: MainViewModel) {
                 textAlign = TextAlign.Center
             )
             Text(
-                text = "Developed by: [Your Name/Group Name]", // Add your name
+                text = "Developed by: Thevun Jayawardena", // Add your name
                 style = MaterialTheme.typography.bodyMedium
             )
 

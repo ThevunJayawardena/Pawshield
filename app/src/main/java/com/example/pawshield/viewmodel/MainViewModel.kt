@@ -67,21 +67,20 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     fun navigateTo(screen: Screen) {
         _currentScreen.value = screen
-        // Clear specific states when navigating away or to certain screens
         if (screen == Screen.Home || screen == Screen.Diagnosis) {
             _capturedImageUri.value = null
-            _currentDiagnosisResult.value = null // Clear current result
+            _currentDiagnosisResult.value = null
         }
         if (screen != Screen.HistoryDetail) {
-            _selectedHistoryItem.value = null // Clear selected history item unless navigating to detail
+            _selectedHistoryItem.value = null
         }
-        _errorMessage.value = null // Clear errors on any navigation
-        _feedbackMessage.value = null // Clear feedback messages
+        _errorMessage.value = null
+        _feedbackMessage.value = null
     }
 
     fun setCapturedImageUri(uri: Uri?) {
         _capturedImageUri.value = uri
-        _currentDiagnosisResult.value = null // Clear previous result when new image is set
+        _currentDiagnosisResult.value = null
         _errorMessage.value = null
     }
 
@@ -91,7 +90,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         viewModelScope.launch {
             _isAnalyzing.value = true
             _errorMessage.value = null
-            _currentDiagnosisResult.value = null // Clear previous result before analyzing
+            _currentDiagnosisResult.value = null
             val context = getApplication<Application>().applicationContext
 
             try {
